@@ -25,10 +25,17 @@ jobs:
         uses: actions/checkout@v4
       - name: Setup Pages
         uses: actions/configure-pages@v4
+      - name: Build and Upload
+        run: |
+          # Copy all files from public to a temporary directory
+          mkdir -p temp_deploy
+          cp -r public/* temp_deploy/
+          # Create .nojekyll file to disable Jekyll processing
+          touch temp_deploy/.nojekyll
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './public'
+          path: './temp_deploy'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4 
