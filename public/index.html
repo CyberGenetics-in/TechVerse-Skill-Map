@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <link type="text/css" rel="stylesheet" href="css/arf.css"/>
+    <script type="text/javascript" src="js/d3.v3.min.js"></script>
+    <title>TechVerse Skill Map</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  </head>
+
+  <body>
+    <div class="app-container">
+      <!-- Header -->
+      <header class="header">
+        <div class="header-content">
+          <div class="logo">
+            <i class="fas fa-terminal"></i>
+            <h1>TechVerse Skill Map</h1>
+          </div>
+          <div class="header-actions">
+            <button class="btn btn-secondary" onclick="toggleSearch()">
+              <i class="fas fa-search"></i>
+              Search
+            </button>
+            <button class="btn btn-primary" onclick="goDark()">
+              <i class="fas fa-moon"></i>
+              <span class="btn-text">Dark Mode</span>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <!-- Search Bar -->
+      <div class="search-container" id="searchContainer" style="display: none;">
+        <div class="search-wrapper">
+          <input type="text" id="searchInput" placeholder="Search skills and learning paths..." class="search-input">
+          <button class="search-btn" onclick="performSearch()">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Main Content -->
+      <main class="main-content">
+        <div class="visualization-container">
+          <div id="body"></div>
+        </div>
+        
+        <!-- Sidebar -->
+        <aside class="sidebar">
+          <div class="sidebar-section">
+            <h3><i class="fas fa-info-circle"></i> Legend</h3>
+            <div class="legend-items">
+              <div class="legend-item">
+                <span class="legend-icon">(B)</span>
+                <span class="legend-text">Beginner level skill</span>
+              </div>
+              <div class="legend-item">
+                <span class="legend-icon">(I)</span>
+                <span class="legend-text">Intermediate level skill</span>
+              </div>
+              <div class="legend-item">
+                <span class="legend-icon">(A)</span>
+                <span class="legend-text">Advanced level skill</span>
+              </div>
+              <div class="legend-item">
+                <span class="legend-icon">(E)</span>
+                <span class="legend-text">Expert level skill</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="sidebar-section">
+            <h3><i class="fas fa-lightbulb"></i> About</h3>
+            <p>TechVerse Skill Map is a comprehensive visualization of technology skills and learning paths. Explore different domains and discover resources to enhance your technical expertise.</p>
+          </div>
+
+          <div class="sidebar-section">
+            <h3><i class="fas fa-bell"></i> Updates</h3>
+            <div class="social-links">
+              <a href="https://x.com/its_justhacked" target="_blank" class="social-link">
+                <i class="fab fa-twitter"></i>
+                @its_justhacked
+              </a>
+              <a href="https://github.com/CyberGenetics-in/TechVerse-Skill-Map" target="_blank" class="social-link">
+                <i class="fab fa-github"></i>
+                GitHub
+              </a>
+            </div>
+          </div>
+
+          <div class="sidebar-section">
+            <h3><i class="fas fa-comments"></i> Feedback</h3>
+            <p>Suggestions, comments, and feedback are extremely welcome! Help us improve the TechVerse Skill Map by reaching out on Twitter or submitting an issue on GitHub.</p>
+          </div>
+        </aside>
+      </main>
+    </div>
+
+    <script src="js/arf.js"></script>
+  </body>
+</html>

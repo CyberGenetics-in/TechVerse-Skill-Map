@@ -1,0 +1,359 @@
+{
+  "name": "Tech Streams",
+  "type": "folder",
+  "children": [
+    {
+      "name": "Cybersecurity",
+      "type": "folder",
+      "children": [
+        {
+          "name": "Offensive Security",
+          "type": "folder",
+          "children": [
+            { "name": "Penetration Testing", "type": "folder", "children": [
+              { "name": "Web App", "type": "url", "url": "" },
+              { "name": "Mobile App", "type": "url", "url": "" },
+              { "name": "Network", "type": "url", "url": "" }
+            ]},
+            { "name": "Bug Bounty", "type": "url", "url": "" },
+            { "name": "Exploit Development", "type": "url", "url": "" },
+            { "name": "Reverse Engineering", "type": "url", "url": "" },
+            { "name": "Social Engineering", "type": "url", "url": "" },
+            { "name": "Wireless Attacks", "type": "url", "url": "" }
+          ]
+        },
+        {
+          "name": "Defensive Security",
+          "type": "folder",
+          "children": [
+            { "name": "Network Security", "type": "url", "url": "" },
+            { "name": "Endpoint Security", "type": "url", "url": "" },
+            { "name": "Cloud Security", "type": "url", "url": "" },
+            { "name": "SIEM & Monitoring", "type": "url", "url": "" },
+            { "name": "Threat Hunting", "type": "url", "url": "" },
+            { "name": "Incident Response", "type": "url", "url": "" },
+            { "name": "Forensics", "type": "url", "url": "" }
+          ]
+        },
+        {
+          "name": "Specialized Domains",
+          "type": "folder",
+          "children": [
+            {
+              "name": "Application Security",
+              "type": "folder",
+              "children": [
+                { "name": "API Security", "type": "url", "url": "" },
+                { "name": "Mobile Security", "type": "url", "url": "" }
+              ]
+            },
+            { "name": "DevSecOps", "type": "url", "url": "" },
+            { "name": "Cryptography", "type": "url", "url": "" },
+            { "name": "Malware Analysis", "type": "url", "url": "" },
+            { "name": "Blockchain Security", "type": "url", "url": "" }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Development",
+      "type": "folder",
+      "children": [
+        {
+          "name": "Web Development",
+          "type": "folder",
+          "children": [
+            {
+              "name": "Frontend",
+              "type": "folder",
+              "children": [
+                { "name": "React", "type": "url", "url": "" },
+                { "name": "Next.js", "type": "url", "url": "" },
+                { "name": "Vue.js", "type": "url", "url": "" }
+              ]
+            },
+            {
+              "name": "Backend",
+              "type": "folder",
+              "children": [
+                { "name": "Node.js", "type": "url", "url": "" },
+                { "name": "Django", "type": "url", "url": "" },
+                { "name": "Spring Boot", "type": "url", "url": "" }
+              ]
+            },
+            {
+              "name": "API Development",
+              "type": "folder",
+              "children": [
+                { "name": "REST", "type": "url", "url": "" },
+                { "name": "GraphQL", "type": "url", "url": "" }
+              ]
+            },
+            { "name": "Full Stack Dev", "type": "url", "url": "" }
+          ]
+        },
+        {
+          "name": "Mobile Development",
+          "type": "folder",
+          "children": [
+            { "name": "Native (Android/iOS)", "type": "url", "url": "" },
+            {
+              "name": "Cross Platform",
+              "type": "folder",
+              "children": [
+                { "name": "Flutter", "type": "url", "url": "" },
+                { "name": "React Native", "type": "url", "url": "" }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Game Development",
+          "type": "folder",
+          "children": [
+            { "name": "Unity", "type": "url", "url": "" },
+            { "name": "Unreal", "type": "url", "url": "" },
+            { "name": "Godot", "type": "url", "url": "" }
+          ]
+        },
+        {
+          "name": "Desktop Development",
+          "type": "folder",
+          "children": [
+            { "name": "Electron", "type": "url", "url": "" },
+            { "name": "JavaFX", "type": "url", "url": "" },
+            { "name": "WPF", "type": "url", "url": "" }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "AI / Machine Learning",
+      "type": "folder",
+      "children": [
+        {
+          "name": "Machine Learning",
+          "type": "folder",
+          "children": [
+            { "name": "Scikit-learn", "type": "url", "url": "" },
+            { "name": "XGBoost", "type": "url", "url": "" },
+            { "name": "LightGBM", "type": "url", "url": "" }
+          ]
+        },
+        {
+          "name": "Deep Learning",
+          "type": "folder",
+          "children": [
+            { "name": "TensorFlow", "type": "url", "url": "" },
+            { "name": "PyTorch", "type": "url", "url": "" },
+            { "name": "Transformers", "type": "url", "url": "" }
+          ]
+        },
+        {
+          "name": "NLP",
+          "type": "folder",
+          "children": [
+            { "name": "Chatbots", "type": "url", "url": "" },
+            { "name": "Text Generation", "type": "url", "url": "" }
+          ]
+        },
+        {
+          "name": "Computer Vision",
+          "type": "folder",
+          "children": [
+            { "name": "OpenCV", "type": "url", "url": "" },
+            { "name": "YOLO", "type": "url", "url": "" }
+          ]
+        },
+        {
+          "name": "Data Science",
+          "type": "folder",
+          "children": [
+            { "name": "Data Cleaning", "type": "url", "url": "" },
+            { "name": "Data Visualization", "type": "url", "url": "" }
+          ]
+        },
+        {
+          "name": "MLOps",
+          "type": "folder",
+          "children": [
+            { "name": "Model Deployment", "type": "url", "url": "" },
+            { "name": "Monitoring", "type": "url", "url": "" }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Cloud & DevOps",
+      "type": "folder",
+      "children": [
+        {
+          "name": "Cloud Platforms",
+          "type": "folder",
+          "children": [
+            { "name": "AWS", "type": "url", "url": "" },
+            { "name": "Azure", "type": "url", "url": "" },
+            { "name": "GCP", "type": "url", "url": "" }
+          ]
+        },
+        {
+          "name": "DevOps Tools",
+          "type": "folder",
+          "children": [
+            { "name": "Docker", "type": "url", "url": "" },
+            { "name": "Kubernetes", "type": "url", "url": "" },
+            { "name": "Terraform", "type": "url", "url": "" },
+            { "name": "CI/CD Pipelines", "type": "url", "url": "" }
+          ]
+        },
+        {
+          "name": "Site Reliability Engineering",
+          "type": "folder",
+          "children": [
+            { "name": "Monitoring", "type": "url", "url": "" },
+            { "name": "Logging", "type": "url", "url": "" },
+            { "name": "High Availability", "type": "url", "url": "" }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Data & Big Data",
+      "type": "folder",
+      "children": [
+        {
+          "name": "Databases",
+          "type": "folder",
+          "children": [
+            { "name": "SQL (Postgres, MySQL)", "type": "url", "url": "" },
+            { "name": "NoSQL (MongoDB, Redis)", "type": "url", "url": "" },
+            { "name": "Graph DB (Neo4j)", "type": "url", "url": "" }
+          ]
+        },
+        {
+          "name": "Data Engineering",
+          "type": "folder",
+          "children": [
+            { "name": "Kafka", "type": "url", "url": "" },
+            { "name": "Airflow", "type": "url", "url": "" },
+            { "name": "ETL", "type": "url", "url": "" }
+          ]
+        },
+        {
+          "name": "Big Data Platforms",
+          "type": "folder",
+          "children": [
+            { "name": "Hadoop", "type": "url", "url": "" },
+            { "name": "Spark", "type": "url", "url": "" },
+            { "name": "Snowflake", "type": "url", "url": "" }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Web3 / Blockchain",
+      "type": "folder",
+      "children": [
+        {
+          "name": "Smart Contracts",
+          "type": "folder",
+          "children": [
+            { "name": "Solidity", "type": "url", "url": "" },
+            { "name": "Vyper", "type": "url", "url": "" }
+          ]
+        },
+        {
+          "name": "DApps",
+          "type": "folder",
+          "children": [
+            { "name": "Web3.js", "type": "url", "url": "" },
+            { "name": "Ethers.js", "type": "url", "url": "" }
+          ]
+        },
+        {
+          "name": "Blockchain Infrastructure",
+          "type": "folder",
+          "children": [
+            { "name": "Nodes", "type": "url", "url": "" },
+            { "name": "Validators", "type": "url", "url": "" }
+          ]
+        },
+        {
+          "name": "Token Standards",
+          "type": "folder",
+          "children": [
+            { "name": "ERC20", "type": "url", "url": "" },
+            { "name": "ERC721", "type": "url", "url": "" }
+          ]
+        },
+        {
+          "name": "Layer 2 Scaling",
+          "type": "folder",
+          "children": [
+            { "name": "Polygon", "type": "url", "url": "" },
+            { "name": "Arbitrum", "type": "url", "url": "" }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "IoT",
+      "type": "folder",
+      "children": [
+        {
+          "name": "Hardware & Embedded",
+          "type": "folder",
+          "children": [
+            { "name": "Arduino", "type": "url", "url": "" },
+            { "name": "ESP32", "type": "url", "url": "" },
+            { "name": "Raspberry Pi", "type": "url", "url": "" },
+            { "name": "Sensors", "type": "url", "url": "" }
+          ]
+        },
+        {
+          "name": "Protocols",
+          "type": "folder",
+          "children": [
+            { "name": "MQTT", "type": "url", "url": "" },
+            { "name": "Zigbee", "type": "url", "url": "" },
+            { "name": "LoRa", "type": "url", "url": "" }
+          ]
+        },
+        {
+          "name": "Edge & Fog Computing",
+          "type": "folder",
+          "children": [
+            { "name": "TinyML", "type": "url", "url": "" }
+          ]
+        },
+        {
+          "name": "IoT Cloud Platforms",
+          "type": "folder",
+          "children": [
+            { "name": "AWS IoT", "type": "url", "url": "" },
+            { "name": "Azure IoT", "type": "url", "url": "" },
+            { "name": "Node-RED", "type": "url", "url": "" }
+          ]
+        },
+        {
+          "name": "IoT Security",
+          "type": "folder",
+          "children": [
+            { "name": "OTA Updates", "type": "url", "url": "" },
+            { "name": "TLS", "type": "url", "url": "" }
+          ]
+        },
+        {
+          "name": "Use Cases",
+          "type": "folder",
+          "children": [
+            { "name": "Smart Home", "type": "url", "url": "" },
+            { "name": "Smart City", "type": "url", "url": "" },
+            { "name": "Healthcare", "type": "url", "url": "" },
+            { "name": "AgriTech", "type": "url", "url": "" }
+          ]
+        }
+      ]
+    }
+  ]
+}

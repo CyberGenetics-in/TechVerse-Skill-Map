@@ -1,0 +1,13 @@
+{
+  "name": "TSM",
+  "main": "index.html",
+  "homepage": "https://github.com/CyberGenetics-in/TechVerse-Skill-Map",
+  "authors": [
+    "Arsalan (just-hacked)"
+  ],
+  "description": "TechVerse-Skill-Map",
+  "license": "",
+  "dependencies": {
+    "d3": "3.5.16"
+  }
+}
