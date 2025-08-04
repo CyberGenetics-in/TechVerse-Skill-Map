@@ -1,7 +1,7 @@
 {
-  "name": "arf",
+  "name": "TSM",
   "version": "1.0.0",
-  "description": "Advanced Reconnaissance Framework",
+  "description": "TechVerse-Skill-Map",
   "main": "public/index.html",
   "scripts": {
     "postinstall": "copyfiles -f ./node_modules/d3/d3.min.js ./public/js/vendor/d3",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lockfale/ARF.git"
+    "url": "git+https://github.com/CyberGenetics-in/TechVerse-Skill-Map.git"
   },
-  "author": "Justin Nordine (s0lray)",
+  "author": "Arsalan (just-hacked)",
   "license": "",
   "bugs": {
-    "url": "https://github.com/lockfale/ARF/issues"
+    "url": "https://github.com/CyberGenetics-in/TechVerse-Skill-Map/issues"
   },
-  "homepage": "https://github.com/lockfale/ARF#readme",
+  "homepage": "https://github.com/CyberGenetics-in/TechVerse-Skill-Map#readme",
   "devDependencies": {
     "copyfiles": "^1.0.0",
     "d3": "^3.5.16"

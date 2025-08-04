@@ -1,51 +1,140 @@
-# OSINT Framework
+# TechVerse Skill Map
 
-http://osintframework.com
+A modern, interactive visualization of technology skills and learning paths organized in a hierarchical tree structure.
 
-## Notes
-OSINT framework focused on gathering information from free tools or resources. The intention is to help people find free OSINT resources. Some of the sites included might require registration or offer more data for $$$, but you should be able to get at least a portion of the available information for no cost.
+## ✨ Modern Features
 
-I originally created this framework with an information security point of view. Since then, the response from other fields and disciplines has been incredible. I would love to be able to include any other OSINT resources, especially from fields outside of infosec. Please let me know about anything that might be missing!
+### 🎨 **Modern UI Design**
+- **Responsive Design**: Works seamlessly on desktop, tablet, and mobile devices
+- **Glass Morphism**: Beautiful frosted glass effects with backdrop blur
+- **Gradient Backgrounds**: Modern gradient color schemes
+- **Typography**: Clean Inter font family for better readability
+- **Icons**: Font Awesome icons for enhanced visual hierarchy
 
-Please visit the framework at the link below and good hunting!
+### 🔍 **Advanced Search**
+- **Real-time Search**: Search through all skills and learning paths instantly
+- **Keyboard Shortcuts**: 
+  - `Ctrl/Cmd + K` to toggle search
+  - `Escape` to close search
+- **Smart Highlighting**: Search results are highlighted in the visualization
+- **Auto-focus**: Search input automatically focuses when opened
 
-https://osintframework.com
+### 🌙 **Dark Mode**
+- **Toggle Dark/Light Mode**: Seamless switching between themes
+- **Persistent State**: Remembers your preference
+- **Optimized Colors**: Carefully chosen colors for both themes
 
-### Legend
-(T) - Indicates a link to a tool that must be installed and run locally  
-(D) - Google Dork, for more information: <a href="https://en.wikipedia.org/wiki/Google_hacking">Google Hacking</a>  
-(R) - Requires registration  
-(M) - Indicates a URL that contains the search term and the URL itself must be edited manually  
+### 📱 **Responsive Layout**
+- **Adaptive Sidebar**: Sidebar reorganizes on smaller screens
+- **Flexible Visualization**: Tree visualization adapts to container size
+- **Mobile Optimized**: Touch-friendly interactions on mobile devices
 
-### For Update Notifications
-Follow me on Twitter: @jnordine - https://twitter.com/jnordine  
-Watch or star the project on Github: https://github.com/lockfale/osint-framework
+### ⚡ **Enhanced Interactions**
+- **Smooth Animations**: Fluid transitions and hover effects
+- **Loading States**: Visual feedback during data loading
+- **Tooltips**: Enhanced tooltips for better information display
+- **Hover Effects**: Interactive hover states for all clickable elements
 
-### Suggestions, Comments, Feedback
-Feedback or new tool suggestions are extremely welcome!  Please feel free to submit a pull request or open an issue on github or reach out on Twitter.
+## 🚀 Getting Started
 
-### Contribute with a GitHub Pull Request
-For new resources, please ensure that the site is available for public and free use.
-<ol start="1">
-  <li>Update the arf.json file in the format shown below. If this isn't the first entry for a folder, add a comma to the last closing brace of the previous entry.</li>
-</ol>
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/CyberGenetics-in/TechVerse-Skill-Map
+   cd osint-framework
+   ```
 
-```
-{
-  "name": "Example Name",
-  "type": "url",
-  "url": "http://example.com"
-}
-```
+2. **Open in your browser**:
+   - Simply open `public/index.html` in any modern web browser
+   - No build process or dependencies required
 
-<ol start="2">
-  <li>Submit pull request!</li>
-</ol>
+3. **Start exploring**:
+   - Click on nodes to expand/collapse the tree
+   - Use the search functionality to find specific skills
+   - Toggle dark mode for comfortable viewing
+   - Explore the sidebar for additional information
 
-Thank you!
+## 🎯 Key Features
 
-## OSINT Framework Website
+### **Interactive Tree Visualization**
+- **Expandable Nodes**: Click to expand/collapse sections
+- **Visual Hierarchy**: Clear parent-child relationships
+- **Smooth Transitions**: Animated node movements
+- **Responsive Layout**: Adapts to different screen sizes
 
-https://osintframework.com
+### **Search & Discovery**
+- **Instant Search**: Real-time filtering as you type
+- **Multi-field Search**: Searches both skill names and descriptions
+- **Visual Feedback**: Highlighted search results
+- **Keyboard Navigation**: Full keyboard support
 
-Happy Hunting!
+### **Modern UI Components**
+- **Sticky Header**: Always accessible navigation
+- **Collapsible Sidebar**: Information panels that adapt to screen size
+- **Glass Morphism**: Modern frosted glass design elements
+- **Gradient Backgrounds**: Beautiful visual appeal
+
+### **Accessibility**
+- **Keyboard Navigation**: Full keyboard support
+- **Screen Reader Friendly**: Proper semantic HTML structure
+- **High Contrast**: Readable text in both light and dark modes
+- **Responsive Design**: Works on all device sizes
+
+## 🛠️ Technical Stack
+
+- **HTML5**: Semantic markup structure
+- **CSS3**: Modern styling with Flexbox and Grid
+- **JavaScript (ES5)**: Interactive functionality
+- **D3.js v3**: Data visualization library
+- **Font Awesome**: Icon library
+- **Google Fonts**: Inter font family
+
+## 🎨 Design Principles
+
+### **Modern Aesthetics**
+- Clean, minimalist design
+- Consistent spacing and typography
+- Subtle shadows and blur effects
+- Smooth animations and transitions
+
+### **User Experience**
+- Intuitive navigation
+- Fast, responsive interactions
+- Clear visual feedback
+- Accessible design patterns
+
+### **Performance**
+- Lightweight implementation
+- Optimized animations
+- Efficient search algorithms
+- Responsive image handling
+
+## 📱 Browser Support
+
+- **Chrome**: 60+
+- **Firefox**: 55+
+- **Safari**: 12+
+- **Edge**: 79+
+
+## 🤝 Contributing
+
+We welcome contributions! Please feel free to:
+
+1. **Report Issues**: Submit bug reports or feature requests
+2. **Submit Pull Requests**: Contribute code improvements
+3. **Suggest Skills**: Add new technology skills and learning paths
+4. **Improve Documentation**: Help make the project more accessible
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- Original OSINT Framework by [@its_justhacked](https://twitter.com/its_justhacked)
+- D3.js library for data visualization
+- Font Awesome for icons
+- Google Fonts for typography
+
+---
+
+**Modernized with ❤️ for the Cybergenetics community**

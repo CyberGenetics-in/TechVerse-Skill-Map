@@ -3,7 +3,9 @@ var margin = [20, 120, 20, 140],
     height = 800 - margin[0] - margin[2],
     i = 0,
     duration = 1250,
-    root;
+    root,
+    allNodes = [],
+    searchResults = [];
 
 var tree = d3.layout.tree()
     .size([height, width]);
@@ -17,10 +19,27 @@ var vis = d3.select("#body").append("svg:svg")
   .append("svg:g")
     .attr("transform", "translate(" + margin[3] + "," + margin[0] + ")");
 
+// Add loading indicator
+vis.append("text")
+    .attr("x", width / 2)
+    .attr("y", height / 2)
+    .attr("text-anchor", "middle")
+    .attr("class", "loading")
+    .text("Loading TechVerse Skill Map...");
+
 d3.json("arf.json", function(json) {
   root = json;
   root.x0 = height / 2;
   root.y0 = 0;
+
+  // Collect all nodes for search functionality
+  function collectNodes(node) {
+    allNodes.push(node);
+    if (node.children) {
+      node.children.forEach(collectNodes);
+    }
+  }
+  collectNodes(root);
 
   function collapse(d) {
     if (d.children) {
@@ -30,19 +49,14 @@ d3.json("arf.json", function(json) {
     }
   }
 
-/*  function toggleAll(d) {
-    if (d.children) {
-      d.children.forEach(toggleAll);
-      toggle(d);
-    }
-  } */
   root.children.forEach(collapse);
   update(root);
+  
+  // Remove loading indicator
+  vis.select(".loading").remove();
 });
 
 function update(source) {
-  // var duration = d3.event && d3.event.altKey ? 5000 : 500;
-
   // Compute the new tree layout.
   var nodes = tree.nodes(root).reverse();
 
@@ -57,7 +71,14 @@ function update(source) {
   var nodeEnter = node.enter().append("svg:g")
       .attr("class", "node")
       .attr("transform", function(d) { return "translate(" + source.y0 + "," + source.x0 + ")"; })
-      .on("click", function(d) { toggle(d); update(d); });
+      .on("click", function(d) { toggle(d); update(d); })
+      .on("mouseover", function(d) {
+        // Add tooltip-like behavior
+        d3.select(this).select("circle").transition().duration(200).attr("r", 8);
+      })
+      .on("mouseout", function(d) {
+        d3.select(this).select("circle").transition().duration(200).attr("r", 6);
+      });
 
   nodeEnter.append("svg:circle")
       .attr("r", 1e-6)
@@ -71,12 +92,12 @@ function update(source) {
       .attr("dy", ".35em")
       .attr("text-anchor", function(d) { return d.children || d._children ? "end" : "start"; })
       .text(function(d) { return d.name; })
-      .style("fill: rgb(0, 0, 0)", function(d) { return d.free ? 'black' : '#999'; })
+      .style("fill", function(d) { return d.free ? '#2d3748' : '#999'; })
       .style("fill-opacity", 1e-6);
 
   nodeEnter.append("svg:title")
     .text(function(d) {
-      return d.description;
+      return d.description || d.name;
     });
 
   // Transition nodes to their new position.
@@ -149,8 +170,187 @@ function toggle(d) {
     d._children = null;
   }
 }
-//Togle Dark Mode
+
+// Toggle Dark Mode
 function goDark() {
   var element = document.body;
   element.classList.toggle("dark-Mode");
-} 
+  
+  // Update button text
+  var btnText = document.querySelector('.btn-text');
+  if (element.classList.contains("dark-Mode")) {
+    btnText.textContent = "Light Mode";
+  } else {
+    btnText.textContent = "Dark Mode";
+  }
+}
+
+// Toggle Search
+function toggleSearch() {
+  var searchContainer = document.getElementById('searchContainer');
+  var searchInput = document.getElementById('searchInput');
+  
+  if (searchContainer.style.display === 'none') {
+    searchContainer.style.display = 'block';
+    searchContainer.classList.add('show');
+    searchInput.focus();
+  } else {
+    searchContainer.style.display = 'none';
+    searchContainer.classList.remove('show');
+  }
+}
+
+// Perform Search
+function performSearch() {
+  var searchTerm = document.getElementById('searchInput').value.toLowerCase();
+  
+  if (searchTerm.length < 2) {
+    // Reset to original state
+    resetSearch();
+    return;
+  }
+  
+  // Filter nodes based on search term
+  searchResults = allNodes.filter(function(node) {
+    return node.name.toLowerCase().includes(searchTerm) || 
+           (node.description && node.description.toLowerCase().includes(searchTerm));
+  });
+  
+  // Highlight matching nodes
+  highlightSearchResults(searchResults);
+}
+
+// Highlight search results
+function highlightSearchResults(results) {
+  // Reset all nodes to normal state
+  vis.selectAll("g.node").select("circle")
+    .style("fill", function(d) { return d._children ? "lightsteelblue" : "#fff"; })
+    .style("stroke", "#667eea");
+  
+  vis.selectAll("g.node").select("text")
+    .style("fill", function(d) { return d.free ? '#2d3748' : '#999'; });
+  
+  // Highlight matching nodes
+  results.forEach(function(result) {
+    vis.selectAll("g.node").filter(function(d) { return d === result; })
+      .select("circle")
+      .style("fill", "#fbbf24")
+      .style("stroke", "#d97706");
+    
+    vis.selectAll("g.node").filter(function(d) { return d === result; })
+      .select("text")
+      .style("fill", "#92400e")
+      .style("font-weight", "bold");
+  });
+}
+
+// Reset search
+function resetSearch() {
+  searchResults = [];
+  vis.selectAll("g.node").select("circle")
+    .style("fill", function(d) { return d._children ? "lightsteelblue" : "#fff"; })
+    .style("stroke", "#667eea");
+  
+  vis.selectAll("g.node").select("text")
+    .style("fill", function(d) { return d.free ? '#2d3748' : '#999'; })
+    .style("font-weight", "normal");
+}
+
+// Add keyboard shortcuts
+document.addEventListener('keydown', function(e) {
+  // Ctrl/Cmd + K to toggle search
+  if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+    e.preventDefault();
+    toggleSearch();
+  }
+  
+  // Escape to close search
+  if (e.key === 'Escape') {
+    var searchContainer = document.getElementById('searchContainer');
+    if (searchContainer.style.display !== 'none') {
+      toggleSearch();
+      resetSearch();
+    }
+  }
+});
+
+// Add search input event listeners
+document.addEventListener('DOMContentLoaded', function() {
+  var searchInput = document.getElementById('searchInput');
+  if (searchInput) {
+    searchInput.addEventListener('input', function() {
+      if (this.value.length >= 2) {
+        performSearch();
+      } else {
+        resetSearch();
+      }
+    });
+    
+    searchInput.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') {
+        performSearch();
+      }
+    });
+  }
+});
+
+// Add smooth scrolling for better UX
+function smoothScrollTo(element) {
+  element.scrollIntoView({
+    behavior: 'smooth',
+    block: 'center'
+  });
+}
+
+// Add tooltip functionality
+function addTooltip(node, text) {
+  var tooltip = d3.select("body").append("div")
+    .attr("class", "tooltip")
+    .style("position", "absolute")
+    .style("background", "rgba(0, 0, 0, 0.8)")
+    .style("color", "white")
+    .style("padding", "8px 12px")
+    .style("border-radius", "6px")
+    .style("font-size", "12px")
+    .style("pointer-events", "none")
+    .style("z-index", "1000")
+    .style("opacity", 0)
+    .text(text);
+  
+  return tooltip;
+}
+
+// Responsive design adjustments
+function adjustVisualization() {
+  var container = document.querySelector('.visualization-container');
+  var containerWidth = container.offsetWidth - 40; // Account for padding
+  var containerHeight = container.offsetHeight - 40;
+  
+  if (containerWidth > 0 && containerHeight > 0) {
+    width = containerWidth - margin[1] - margin[3];
+    height = containerHeight - margin[0] - margin[2];
+    
+    // Update tree size
+    tree.size([height, width]);
+    
+    // Update SVG dimensions
+    vis.attr("width", width + margin[1] + margin[3])
+       .attr("height", height + margin[0] + margin[2]);
+    
+    // Recalculate layout
+    if (root) {
+      update(root);
+    }
+  }
+}
+
+// Listen for window resize
+window.addEventListener('resize', function() {
+  clearTimeout(window.resizeTimeout);
+  window.resizeTimeout = setTimeout(adjustVisualization, 250);
+});
+
+// Initialize responsive design
+document.addEventListener('DOMContentLoaded', function() {
+  setTimeout(adjustVisualization, 100);
+}); 
